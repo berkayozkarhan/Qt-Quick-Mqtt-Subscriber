@@ -62,7 +62,7 @@ Window {
         Rectangle{
             width: parent.width - 14
             height: parent.height
-            color: "green"
+            color: "black"
 
             Row{
                 id: topRow
@@ -78,6 +78,7 @@ Window {
                     Label{
                         text: "Connected:"
                         anchors.right: parent.right
+                        color: "green"
                     }
                 }
                 Column{
@@ -85,6 +86,7 @@ Window {
                     Label{
                         id: lblMqttConnectedStatus
                         text: "False"
+                        color: "green"
                         anchors.right: parent.right
                     }
                 }
@@ -96,6 +98,7 @@ Window {
                     height: parent.height
                     Label{
                         text: "Subscribed:"
+                        color: "green"
                     }
                 }
                 Column{
@@ -103,6 +106,7 @@ Window {
                     Label{
                         id: lblMqttsubscribedStatus
                         text: "False"
+                        color: "green"
                     }
                 }
                 Item {
@@ -113,6 +117,7 @@ Window {
                     height: parent.height
                     Label{
                         text: "Topic:"
+                        color: "green"
                     }
                 }
                 Column{
@@ -120,6 +125,7 @@ Window {
                     Label{
                         id: lblMqttTopic
                         text: ""
+                        color: "green"
                     }
                 }
             }
@@ -135,8 +141,9 @@ Window {
                     Label{
                         id: lblData
                         text: "Data : "
+                        color: "green"
                         anchors.right: parent.right
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.topMargin: 45
                         font.pixelSize: 37
                     }
                 }
@@ -146,8 +153,9 @@ Window {
                     Label{
                         id: lblValue
                         text: "Value"
+                        color: "green"
                         anchors.left: parent.left
-                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.topMargin: 45
                         font.pixelSize: 37
                     }
                 }
