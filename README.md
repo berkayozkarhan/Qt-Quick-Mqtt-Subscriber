@@ -30,4 +30,9 @@ Run :
     >python3 __main__.py
 
 
-Then run Qt Quick Project.
+Build :
+First, export your qmake path to env. usually in Qt/x.x.x/gcc_64/bin directory, Qt is the directory that you installed your Qt.
+> export QT_QMAKE_PATH="your/qmake/path"
+> qmake -r .
+> make -j16
+> ./MqttTry_Quick
