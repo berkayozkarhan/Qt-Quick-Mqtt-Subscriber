@@ -20,7 +20,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    scripts/__main__.py
+    scripts/__main__.py \
+    scripts/conf.py \
+    scripts/datagenerator.py
 
 HEADERS += \
     MqttWorker.h
