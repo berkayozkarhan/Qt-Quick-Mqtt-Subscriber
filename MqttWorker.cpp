@@ -19,7 +19,6 @@ MqttWorker::MqttWorker(QObject *parent)
 
 bool MqttWorker::start()
 {
-    qDebug("Start called.");
     if(m_client->state() == QMqttClient::Connected)
         m_client->disconnectFromHost();
 
@@ -29,7 +28,6 @@ bool MqttWorker::start()
 
 bool MqttWorker::stop()
 {
-    qDebug("Stop called.");
     m_client->disconnectFromHost();
     return true;
 }
@@ -41,24 +39,13 @@ void MqttWorker::updateLogStateChange()
 
 void MqttWorker::brokerDisconnected()
 {
-    qDebug("Broker disconnected.");
     emit client_disconnected();
 }
 
 void MqttWorker::messageReceived(const QByteArray &message, const QMqttTopicName &topic)
 {
-    const QString content = QDateTime::currentDateTime().toString()
-            + QLatin1String(" Received Topic : ")
-            + topic.name()
-            + QLatin1String(" Message : ")
-            + message
-            + QLatin1Char('\n');
-    qDebug("%s", qUtf8Printable(content));
-
     QStringList strList = topic.name().split('/');
     QString chg = strList[strList.length() - 1]; // last index.
-    qDebug("topic : %s", qUtf8Printable(chg));
-
     emit client_message_received(message, chg);
 }
 
@@ -72,8 +59,6 @@ void MqttWorker::pingResponseReceived()
 
 void MqttWorker::mqttClient_connected()
 {
-
-    qDebug("Mqtt Client connected.");
     emit client_connected();
 
     QString qos = "0";
